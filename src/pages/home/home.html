@@ -13,19 +13,37 @@
     Random Testing https://ionicframework.com/docs/components
   </p>
 
-  <!-- Floating Input Label -->
+  <!-- Floating Input Label https://ionicframework.com/docs/components/#inputs -->
   <ion-list>
 
       <ion-item>
-        <ion-label floating>Username</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-label floating>First Name</ion-label>
+        <!--Two Way Data Binding-->
+        <ion-input type="text" [(ngModel)]='firstName'></ion-input>
       </ion-item>
     
       <ion-item>
-        <ion-label floating>Password</ion-label>
-        <ion-input type="password"></ion-input>
+        <ion-label floating>Last Name</ion-label>
+        <!--Two Way Data Binding-->
+        <ion-input type="text" [(ngModel)]='lastName'></ion-input>
       </ion-item>
-    
+
+      <ion-item>
+        <ion-label floating>Date of Birth (Click and Drag)</ion-label>
+        <!--Two Way Data Binding-->
+        <ion-datetime displayFormat="DD MMM, YYYY" [(ngModel)]="dateOfBirth"></ion-datetime>
+      </ion-item>
+
     </ion-list>
 
+<!-- Cards https://ionicframework.com/docs/components/#cards-->
+<ion-card text-center>
+    <ion-card-header class="HeaderSize">
+      <!-- Interpolation-->
+      {{firstName || 'First Name '}} {{lastName || 'Last Name'}}
+    </ion-card-header>
+    <ion-card-content class="CardSize1">
+     {{dateOfBirth || 'Y/M/D'}}
+    </ion-card-content>
+  </ion-card>
 </ion-content>
