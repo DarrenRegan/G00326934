@@ -42,8 +42,14 @@
       <!-- Interpolation-->
       {{firstName || 'First Name '}} {{lastName || 'Last Name'}}
     </ion-card-header>
+
     <ion-card-content class="CardSize1">
-     {{dateOfBirth || 'Y/M/D'}}
+      {{dateOfBirth || 'Y/M/D'}}
     </ion-card-content>
+
+    <ion-card-content class="CardSize1">
+      {{number || '1-100'}}
+    </ion-card-content>
+
   </ion-card>
 </ion-content>
