@@ -9,15 +9,16 @@ import 'rxjs/add/operator/map';
 */
 @Injectable()
 export class WeatherProvider {
-  //fab33af1eef90798
+  //API key from Website, two variables for api key
   apiKey = 'fab33af1eef90798';
   url;
 
   constructor(public http: HttpClient) {
-    console.log('Hello WeatherProvider Provider');
+    console.log('API Data confirmed');
     this.url = 'http://api.wunderground.com/api/'+this.apiKey+'/conditions/q';
   }
 
+  //Takes in City + State returns using http module get(url above + state + city and finally .json
   getWeather(city, state){
     return this.http.get(this.url+'/'+state+'/'+city+'.json')
   }
