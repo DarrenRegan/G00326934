@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
+import { WeatherPage } from '../weather/weather';
 
 @Component({
   selector: 'page-settings',
@@ -32,6 +33,6 @@ export class SettingsPage {
     }
     //console.log(location);
     this.storage.set('location', JSON.stringify(location));
-    this.navCtrl.push(SettingsPage);
+    this.navCtrl.push(WeatherPage);//Switches to Weather Page
   }
 }
