@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-import { SettingsPage } from '../settings/settings';
 
 @Component({
   selector: 'page-settings',
@@ -23,7 +22,9 @@ export class SettingsPage {
       }
     });
   }
-
+  ionViewDidLoad(){
+    console.log('ionViewDidLoad SettingsPage');
+  }
   saveForm(){
     let location = {
       city: this.city,
@@ -33,6 +34,4 @@ export class SettingsPage {
     this.storage.set('location', JSON.stringify(location));
     this.navCtrl.push(SettingsPage);
   }
-
-
 }
